@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+<title>Cadastro de medicamentos</title>
+  </head>
+  <body>
+    <div id="firstdiv">
+      <ul id="organize">
+        <li id="casa">Home</li>
+        <li id="medicine">Cadastro<br> de Medicamentos</li>
+        <li id="vaccine">Cadastro<br> de Vacinas</li>
+        <li id="suplements">Cadastro<br> de Cosméticos</li>
+      </li>
+    </div>
+    <div id="headerorganize">
+      <img id="picture" src="./images/medicamentos.svg" />
+      <div id="smallchanges">
+        <header id="headerchange">Cadastro de Medicamentos</header>
+        <h2 id="subtitle">Farmácia da Gente</h2>
+        </div>
+    </div>
+    <div class="maincontent">
+            <div id="firstinput">
+                <label id="lbl1">Nome do Medicamento*</label>
+                <input id="input1"  required>
+                <label id="lbl2">Quantidade Disponível*</label>
+                <input id="input2" required>
+                <label id="lbl3">Classe de Medicamento*</label>
+                <input id="input3" required>
+                <button id="cadastre" type="button" onclick="cadastramento(txtnome.value, txtmedicamento.value, txtquantidade.value, txttipo.value)">Cadastrar</button>
+            </div>
+            <div id="secondinput>">
+                <table id="maintable">
+                    <tr id="linha">
+                        <th>ID</th>
+                        <th>Medicamento</th>
+                        <th>Quantidade</th>
+                        <th>Classe de Medicamento</th>
+                        <th>Remover</th>
+                    </tr>
+                    <tr id="coluna">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><img src="./images/lixeira.svg" id="lixo" type="button"></td>                        
+                    </tr>
+                </table> 
+            </div>
+    </div>
+      </main>
+    </div>
+    <script type="text/js" src="main.js"></script>
+  </body>
+</html>
