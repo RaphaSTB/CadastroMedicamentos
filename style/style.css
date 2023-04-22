@@ -162,6 +162,7 @@ h2{
     width: 180px;
     height: 20px;
     border: 1px solid #767373;
+    border-collapse: collapse;
  }
 #linha{
     height: 25px;

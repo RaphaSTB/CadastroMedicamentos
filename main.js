@@ -1,20 +1,72 @@
+class Produto{
 
-function cadastramento(nome,medicamento,quantidade,tipo){
+    constructor(){
+        this.id = 1;
+        this.arrayprodutos = [];
+    }
 
-    var tb = document.getElementById("maintable");
-    var qtdLinhas = tb.rows.lenght;
-    var linha = tb.insertRow(qtdLinhas);
+    Adicionar(){
+        let produto = this.LerDados()
+        if(this.Validar(produto) == truen){
+          this.Salvar(produto)
+        }
+    }
 
-    var cellcodigo = linha.insertcell(0);
-    var cellname = linha.insertcell(1);
-    var cellmedicine = linha.insertcell(2);
-    var cellqtd = linha.insertcell(3);
-    var celltype = linha.insertcell(4);
+    LerDados(){
+        let produto = {}
 
-    cellcodigo.innerHTML = qtdLinhas;
-    cellname.innerHTML = nome;
-    cellmedicine.innerHTML = medicamento;
-    cellqtd.innerHTML = quantidade;
-    celltype.innerHTML = tipo;
+        produto.id = this.id;
+        produto.nomeproduto = document.getElementById('input1').value
+        produto.quantidadeproduto = document.getElementById('input2').value
+        produto.classeproduto = document.getElementById('input3').value
 
+        return produto
+    }
+    Validar(produto){
+        let msg = '';
+
+        if(produto.nomeproduto == ''){
+            msg += 'Por favor, insira corretamente o nome do produto \n'
+        }
+        if(produto.quantidadeproduto == ''){
+            msg += 'Por favor, insira a quantidade do produto'
+        }
+        if(produto.classeproduto == ''){
+            msg += 'Por favor, insira a classe do produto'
+        }
+        if(msg != ''){
+            alert(msg)
+            return false
+        }
+            return true
+    }
+    Salvar(produto){
+        this.arrayprodutos.push(produto)
+        this.id++;
+    }
+    Listar(produto){
+        let tbody = document.getElementById('linha')
+        tbody.innerText = ''
+
+        for(let i = 0; i < this.arrayprodutos.length; i++){
+
+            let tr = linha.insertrow();
+            
+            let td_id = tr.insertcell();
+            let td_nome = tr.insertcell();
+            let td_quantidade = tr.insertcell();
+            let td_classe = tr.insertcell();
+            let td_del = tr.insertcell();
+
+            td_id.innerText = this.arrayprodutos[i].id;
+            td_nome.innerText = this.arrayprodutos[i].nomeproduto;
+            td_quantidade.innerText = this.arrayprodutos[i].quantidadeproduto;
+            td_classe.innerText = this.arrayprodutos[i].classeproduto;
+            let images = documento.createelement('img')
+            ImageBitmap.src='lixeira.svg'
+            td_del.appendchild(imagem);
+        }
+    }
 }
+
+var produto =new Produto();
